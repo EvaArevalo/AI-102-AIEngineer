@@ -34,6 +34,10 @@ def GetLanguage(text):
     detectedLanguage = client.detect_language(documents = [text])[0]
     return detectedLanguage.primary_language.name
 
+    # Get sentiment
+    #sentimentAnalysis = client.analyze_sentiment(documents=[text])[0]
+    #print("\nSentiment: {}".format(sentimentAnalysis.sentiment))
+
 
 if __name__ == "__main__":
     main()

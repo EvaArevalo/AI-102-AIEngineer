@@ -1,9 +1,9 @@
 @echo off
 
 rem Set values for your Language Understanding app
-set app_id=YOUR_APP_ID
-set endpoint=YOUR_ENDPOINT
-set key=YOUR_KEY
+set app_id=c41dbb3f-141b-4872-9d0e-eca92e1acb68
+set endpoint=https://australiaeast.api.cognitive.microsoft.com/
+set key=5e3ff4d446b04942aab5cac433fcb8dfYOUR_KEY
 
 rem Get parameter and encode spaces for URL
 set input=%1

@@ -1,9 +1,10 @@
 from dotenv import load_dotenv
 from datetime import datetime
+from playsound import playsound # for audio files
 import os
 
 # Import namespaces
-
+import azure.cognitiveservices.speech as speech_sdk
 
 def main():
     try:
@@ -16,10 +17,16 @@ def main():
         cog_region = os.getenv('COG_SERVICE_REGION')
 
         # Configure translation
-
+        # Configure translation
+        translation_config = speech_sdk.translation.SpeechTranslationConfig(cog_key, cog_region)
+        translation_config.speech_recognition_language = 'en-US'
+        translation_config.add_target_language('fr')
+        translation_config.add_target_language('es')
+        translation_config.add_target_language('hi')
+        print('Ready to translate from',translation_config.speech_recognition_language)
 
         # Configure speech
-
+        speech_config = speech_sdk.SpeechConfig(cog_key, cog_region)
 
         # Get user input
         targetLanguage = ''
@@ -37,8 +44,25 @@ def main():
 def Translate(targetLanguage):
     translation = ''
 
-    # Translate speech
+    # Translate speech for Mic
+    # audio_config = speech_sdk.AudioConfig(use_default_microphone=True)
+    # translator = speech_sdk.translation.TranslationRecognizer(translation_config, audio_config)
+    # print("Speak now...")
+    # result = translator.recognize_once_async().get()
+    # print('Translating "{}"'.format(result.text))
+    # translation = result.translations[targetLanguage]
+    # print(translation)
 
+    # Translate from audio file
+    audioFile = 'station.wav'
+    playsound(audioFile)
+    audio_config = speech_sdk.AudioConfig(filename=audioFile)
+    translator = speech_sdk.translation.TranslationRecognizer(translation_config, audio_config)
+    print("Getting speech from file...")
+    result = translator.recognize_once_async().get()
+    print('Translating "{}"'.format(result.text))
+    translation = result.translations[targetLanguage]
+    print(translation)
 
     # Synthesize translation
 
