@@ -1,0 +1,11 @@
+
+# WeatherRequested2
+> add some example phrases to trigger this intent:
+> - please tell me the weather
+> - what is the weather like in {city=Seattle}
+
+> entity definitions:
+> @ ml city
+
+- please tell me the weather
+- what is the weather like in {city=Seattle}

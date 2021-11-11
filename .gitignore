@@ -2,3 +2,6 @@
 Debug/
 netcoreapp3.1/
 obj/
+
+# Vscode
+.vscode

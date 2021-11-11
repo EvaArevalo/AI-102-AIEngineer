@@ -1,0 +1,10 @@
+{
+  "WeatherBot.en-us": {
+    "rootDialog": true,
+    "triggers": {
+      "WeatherRequested2": [
+        "GetWeather.en-us"
+      ]
+    }
+  }
+}

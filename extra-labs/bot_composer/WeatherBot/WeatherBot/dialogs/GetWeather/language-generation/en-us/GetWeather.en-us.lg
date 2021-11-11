@@ -1,0 +1,23 @@
+[import](common.lg)
+
+# TextInput_Prompt_Ebuvbc()
+[Activity
+    Text = ${TextInput_Prompt_Ebuvbc_text()}
+]
+
+# TextInput_Prompt_Ebuvbc_text()
+- Enter your city.
+# SendActivity_1izady()
+[Activity
+    Text = ${SendActivity_1izady_text()}
+]
+
+# SendActivity_1izady_text()
+- The weather in ${dialog.city} is ${dialog.weather} and the temperature is ${dialog.temp}&deg;.
+# SendActivity_BFiluE()
+[Activity
+    Text = ${SendActivity_BFiluE_text()}
+]
+
+# SendActivity_BFiluE_text()
+- I got an error: ${dialog.api_response.content.message}.
