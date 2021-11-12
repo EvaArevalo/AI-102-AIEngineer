@@ -21,7 +21,11 @@ def main():
         form_training_client = FormTrainingClient(form_endpoint, AzureKeyCredential(form_key))
 
         # Train model 
-        poller = form_training_client.begin_training(trainingDataUrl, use_training_labels=False)
+        #poller = form_training_client.begin_training(trainingDataUrl, use_training_labels=False)
+        #model = poller.result()
+
+        # Train model with labels
+        poller = form_training_client.begin_training(trainingDataUrl, use_training_labels=True)
         model = poller.result()
 
         print("Model ID: {}".format(model.model_id))

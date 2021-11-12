@@ -1,5 +1,5 @@
 {
-    "name": "margies-indexer",
+    "name": "ai102-kblab-blobstorage",
     "description": "Indexer for Margies Travel",
     "dataSourceName": "margies-data",
     "skillsetName": "margies-skillset",
